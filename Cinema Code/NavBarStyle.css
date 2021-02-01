@@ -1,0 +1,58 @@
+.logo{
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 10px 40px;
+    color: #e4e4e4;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+nav{
+  position: fixed;
+  width: 100%;
+  line-height: 60px;
+}
+
+
+nav ul{
+  margin: 0;
+  padding: 0 40px 0 0;
+  line-height: 60px;
+  list-style: none;
+  text-align: right;
+  overflow: hidden;
+  background: #0000; /* #0000 is rgb value rgb(0,0,0,0.0)*/
+  transition: 1s;
+}
+
+
+nav.black ul{
+  background:#101113; 
+}
+
+
+.menuItem{
+  display: inline-block;
+  padding: 10px 40px;
+}
+
+.menuItem a{
+  text-decoration: none;
+  color: #e4e4e4;
+  font-size: 14px;
+}
+
+.logo:hover, .menuItem a:hover, .col1 h4:hover{
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#selected{
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
