@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema - Movie A</title>
+    <link rel="stylesheet" href="NavBarStyle.css">
+    <link rel="stylesheet" href="MoviePageOne.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <header>
+            <nav>
+                <div><a href="Homepage.html" class="logo">CINEMA</a></div>
+                <div class="menu">
+                    <ul>
+                        <li class="menuItem"><a href="NowShowing.html">NOW SHOWING</a></li>
+                        <li class="menuItem"><a href="ComingSoon.html">COMING SOON</a></li>
+                        <li class="menuItem"><a href="#">PROMOTIONS</a></li>
+                        <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
+                        <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
+                        <li class="menuItem"><a href="Login.html">LOGIN</a></li>
+                        <li class="menuItem"><a href="Register.html">REGISTER</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+
+    <div class="movieOverview">
+        <div class="movieImage"><img src="Placeholder.jpg" alt="Placeholder"></div>
+        <div class="movieTitle">
+            <h4>Drama, Crime Fiction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2h 58min</h4>
+            <h1>Placeholder Movie</h1>
+        </div>
+        <div class="movieDesc">
+            <h4>
+                Quisque libero sem, aliquam et eleifend at, commodo sed leo. Ut quis placerat nulla. Praesent non pretium dolor. Morbi convallis elit eros, in rhoncus est facilisis a. Fusce consequat blandit lectus ac eleifend.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et labore veritatis quas quos molestias iure inventore autem dolorem voluptatem eum animi, aspernatur laudantium. Earum eligendi veritatis, sed dolorum sunt reiciendis.
+            </h4>
+        </div>
+        <h4 id="releaseDate">Release Date</h4>
+        <div class="buyBtn">
+            <button class="buyATicket">Buy A Ticket</button>
+        </div>
+        <div class="castBlock">
+            <h3>Cast</h3>
+            <h4>John Doe &nbsp;&nbsp; Jane Doe &nbsp;&nbsp; Joe Bloggs</h4>
+            <h4>John Doe &nbsp;&nbsp; Jane Doe &nbsp;&nbsp; Joe Bloggs</h4>
+        </div>
+    </div>
+
+    
+
+
+
+    
+    <script>
+        $(window).scroll(function(){
+            if($(window).scrollTop()){
+                $('nav').addClass('black');
+            }
+            else{
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+
+</body>
+</html>
