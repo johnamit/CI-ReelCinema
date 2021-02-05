@@ -18,7 +18,7 @@ nav.black .menuItem a, nav.black .logo{
 .movieOverview{
     padding-top: 30vh;
     padding-left: 2vw;
-    height: 100vh;
+    height: 90vh;
 }
 
 .movieImage img{
@@ -27,7 +27,6 @@ nav.black .menuItem a, nav.black .logo{
     float: right;
     padding-right: 250px;
     transform: translateY(-50px);
-    z-index: -9999;
 }
 
 .movieTitle h1{
@@ -80,4 +79,46 @@ nav.black .menuItem a, nav.black .logo{
 
 .castBlock h4{
     font-weight: normal;
+}
+
+.movieTitle, .movieDesc, #releaseDate, .buyBtn{
+    transform: translateY(-20px);
+}
+
+#trailerHead, #reviewHead{
+    margin: 0;
+    text-align: center;
+    padding-bottom: 60px;
+    transform: translateX(-30px);
+    font-size: 40px;
+}
+
+.row{
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.trailerCol{
+    flex: 33.33%;
+    padding: 10px;
+}
+
+.trailerCol img{
+    width: 90%;
+    height: 90%;
+}
+
+.reviews{
+    margin-top: 20vh;
+}
+
+.reviews a{
+    margin-left: 8vh;
+    text-decoration: none;
+    color: #a7a7a7;
+}
+
+.reviews a:hover{
+    color: #ffffff;
 }
