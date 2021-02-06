@@ -19,7 +19,7 @@
 
     <div class="container">
         <h1>CINEMA REGISTER</h1>
-        <form action="#">
+        <form action="Register.php" method="POST">
             <div class="inputField" id="inputSpacing">
                 <input type="text" name="forename" required>
                 <span></span>
@@ -27,7 +27,7 @@
             </div>            
 
             <div class="inputField" id="inputSpacing">
-                <input type="text" name="forename" required>
+                <input type="text" name="surname" required>
                 <span></span>
                 <label>Surname</label>
             </div> 
@@ -45,12 +45,10 @@
             </div>
 
             <input class="loginBtn" type="submit" value="Register">
-            
-            <div class="register">
-                <a class="regLink" href="Login.html">Already a member?</a>
-            </div>
-
         </form>
+        <div class="register">
+            <a class="regLink" href="Login.html">Already a member?</a>
+        </div>
     </div>
 
     <script>
