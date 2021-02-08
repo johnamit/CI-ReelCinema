@@ -196,16 +196,16 @@
     <div class="toolbar">
         <header>
             <nav>
-                <div><a href="Homepage.html" class="logo">CINEMA</a></div>
+                <div><a href="<?php echo site_url('home/homepage')?>" class="logo">CINEMA</a></div>
                 <div class="menu">
                     <ul>
-                        <li class="menuItem"><a href="NowShowing.html">NOW SHOWING</a></li>
-                        <li class="menuItem"><a href="ComingSoon.html">COMING SOON</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/nowshowing')?>">NOW SHOWING</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/comingsoon')?>">COMING SOON</a></li>
                         <li class="menuItem"><a href="#">PROMOTIONS</a></li>
                         <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><a href="Login.html">LOGIN</a></li>
-                        <li class="menuItem"><a href="Register.html">REGISTER</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/login')?>">LOGIN</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/register')?>">REGISTER</a></li>
                     </ul>
                 </div>
             </nav>

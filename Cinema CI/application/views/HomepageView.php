@@ -233,15 +233,15 @@
                 <h4>Placeholder Movie A</h4>
             </div>
             <div class="col1">
-                <a href="MoviePageOne.html"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie B</h4>
             </div>
             <div class="col1">
-                <a href="MoviePageOne.html"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie C</h4>
             </div>
             <div class="col1">
-                <a href="MoviePageOne.html"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie D</h4>
             </div>
         </div>

@@ -211,7 +211,7 @@
     <div class="toolbar">
         <header>
             <nav>
-                <div><a href="Homepage.html" class="logo">CINEMA</a></div>
+                <div><a href="<?php echo site_url('home/homepage')?>" class="logo">CINEMA</a></div>
             </nav>
         </header>
     </div>
@@ -237,7 +237,7 @@
             <div class="forgot">Forgot Password?</div>
 
             <div class="register">
-                <a class="regLink" href="Register.html">Not a member?</a>
+                <a class="regLink" href="<?php echo site_url('home/register')?>">Not a member?</a>
             </div>
 
         </form>
