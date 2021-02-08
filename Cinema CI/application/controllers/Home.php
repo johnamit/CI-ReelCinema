@@ -14,4 +14,12 @@ class Home extends CI_Controller{
         $this->load->view('ComingSoonView');
     }
 
+    public function login(){
+        $this->load->view('LoginView');
+    }
+
+    public function register(){
+        $this->load->view('RegisterView');
+    }
+
 ?>

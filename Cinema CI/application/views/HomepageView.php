@@ -209,8 +209,8 @@
                         <li class="menuItem"><a href="#">PROMOTIONS</a></li>
                         <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><a href="Login.html">LOGIN</a></li>
-                        <li class="menuItem"><a href="Register.html">REGISTER</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/login')?>">LOGIN</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/register')?>">REGISTER</a></li>
                     </ul>
                 </div>
             </nav>
