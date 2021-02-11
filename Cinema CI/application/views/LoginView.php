@@ -218,8 +218,7 @@
 
     <div class="container">
         <h1>CINEMA LOGIN</h1>
-        <form action="#">
-
+        <?php echo form_open('user/dologin');?>
             <div class="inputField" id="inputSpacing">
                 <input type="text" name="email" required>
                 <span></span>
@@ -239,7 +238,6 @@
             <div class="register">
                 <a class="regLink" href="<?php echo site_url('home/register')?>">Not a member?</a>
             </div>
-
         </form>
     </div>
 

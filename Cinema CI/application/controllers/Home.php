@@ -25,6 +25,10 @@ class Home extends CI_Controller{
     public function moviepageone(){
         $this->load->view('MoviePageOneView');
     }
+
+    public function errorpage(){
+        $this->load->view('ErrorPageView');
+    }
 }
 
 ?>

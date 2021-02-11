@@ -110,8 +110,8 @@ h2{
           <ul>
             <li class="menuItem"><a href="<?php echo site_url('home/nowshowing')?>">NOW SHOWING</a></li>
             <li class="menuItem"><a href="<?php echo site_url('home/comingsoon')?>">COMING SOON</a></li>
-            <li class="menuItem"><a href="#">PROMOTIONS</a></li>
-            <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
+            <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">PROMOTIONS</a></li>
+            <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">MEMBERSHIP</a></li>
             <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
             <li class="menuItem"><a href="<?php echo site_url('home/login')?>">LOGIN</a></li>
             <li class="menuItem"><a href="<?php echo site_url('home/register')?>">REGISTER</a></li>

@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteBase /proj/co553m/project/c2-3
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index.php|resources|css)
+RewriteRule ^(.*)$ ./index.php?/$1 [L]

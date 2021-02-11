@@ -82,7 +82,7 @@
     header{
         height: 90vh;
         width: 100%;
-        background: url(SkyfallHeroDark.jpg) no-repeat 50% 50%;
+        background: url(<?php echo base_url();?>images/SkyfallHeroDark.jpg) no-repeat 50% 50%;
         background-size: cover;
     }
 
@@ -206,11 +206,11 @@
                     <ul>
                         <li class="menuItem"><a href="<?php echo site_url('home/nowshowing')?>">NOW SHOWING</a></li>
                         <li class="menuItem"><a href="<?php echo site_url('home/comingsoon')?>">COMING SOON</a></li>
-                        <li class="menuItem"><a href="#">PROMOTIONS</a></li>
-                        <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">PROMOTIONS</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><a href="<?php echo site_url('home/login')?>">LOGIN</a></li>
-                        <li class="menuItem"><a href="<?php echo site_url('home/register')?>">REGISTER</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('user/login')?>">LOGIN</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('user/register')?>">REGISTER</a></li>
                     </ul>
                 </div>
             </nav>
@@ -229,19 +229,19 @@
         <h2 id="popularHead">POPULAR FILMS</h2>
         <div class="row">
             <div class="col1">
-                <a href="MoviePageOne.html"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie A</h4>
+                <a href="<?php echo site_url('films/thesimpsonsmovie')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="TheSimpsonsMovie"></a>
+                <h4>The Simpsons Movie</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie B</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie C</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie D</h4>
             </div>
         </div>
