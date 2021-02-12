@@ -14,7 +14,34 @@ class User extends CI_Controller{
         $password = $this->input->post('password');
         
         $sendUserDetails = $this->RegisterModel->registerUser($forename, $surname, $email, $password);
-        redirect('user/home');
+        redirect('home/homepage');
+    }
+
+    public function login(){
+        $this->load->view('LoginView');
+    }
+
+    public function dologin(){
+        $this->session->unset_userdata('email');
+        $this->load->model('LoginModel');
+
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('password','Password','required');
+
+        $checkResult = $this->LoginModel->checkLogin($email, $password);
+        
+        if($this->form_validation->run() == false){
+            $this->load->view('LoginView');
+        }
+        else if($checkResult == false){
+            $this->load->view('LoginView');
+        }
+        else{ 
+            $this->session->set_userdata('email',$email);
+            redirect('home/homepage');
+        }
     }
 }
 

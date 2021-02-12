@@ -22,4 +22,13 @@ class Home extends CI_Controller{
         $this->load->view('RegisterView');
     }
 
+    public function moviepageone(){
+        $this->load->view('MoviePageOneView');
+    }
+
+    public function errorpage(){
+        $this->load->view('ErrorPageView');
+    }
+}
+
 ?>

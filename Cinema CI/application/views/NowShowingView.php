@@ -128,11 +128,11 @@
                     <ul>
                         <li class="menuItem" id="selected"><a href="<?php echo site_url('home/nowshowing')?>">NOW SHOWING</a></li>
                         <li class="menuItem"><a href="<?php echo site_url('home/comingsoon')?>">COMING SOON</a></li>
-                        <li class="menuItem"><a href="#">PROMOTIONS</a></li>
-                        <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">PROMOTIONS</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><a href="Login.html">LOGIN</a></li>
-                        <li class="menuItem"><a href="Register.html">REGISTER</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/login')?>">LOGIN</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/register')?>">REGISTER</a></li>
                     </ul>
                 </div>
             </nav>
@@ -143,37 +143,37 @@
         <h2 id="showingHead">Now Showing</h2>
         <div class="row">
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie A</h4>
+                <a href="<?php echo site_url('films/thesimpsonsmovie')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="TheSimpsonsMovie"></a>
+                <h4>The Simpsons Movie</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie B</h4>
+                <a href="<?php echo site_url('films/frozen')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Frozen"></a>
+                <h4>Frozen</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie C</h4>
+                <a href="<?php echo site_url('films/avengersendgame')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="AvengersEndgame"></a>
+                <h4>Avengers Endgame</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie D</h4>
+                <a href="<?php echo site_url('films/interstellar')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Interstellar"></a>
+                <h4>Interstellar</h4>
             </div>
         </div>
         <div class="row">
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie E</h4>
+                <a href="<?php echo site_url('films/thewolfofwallstreet')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="TheWolfofWallStreet"></a>
+                <h4>The Wolf of Wall Street</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie F</h4>
+                <a href="<?php echo site_url('films/kingsmanthegoldencircle')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="KingsmanTheGoldenCircle"></a>
+                <h4>Kingsman: The Golden Circle</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie G</h4>
+                <a href="<?php echo site_url('films/babydriver')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="BabyDriver"></a>
+                <h4>Baby Driver</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie H</h4>
             </div>
         </div>

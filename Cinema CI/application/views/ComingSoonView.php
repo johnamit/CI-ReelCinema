@@ -127,11 +127,11 @@
                     <ul>
                         <li class="menuItem"><a href="<?php echo site_url('home/nowshowing')?>">NOW SHOWING</a></li>
                         <li class="menuItem" id="selected"><a href="<?php echo site_url('home/comingsoon')?>">COMING SOON</a></li>
-                        <li class="menuItem"><a href="#">PROMOTIONS</a></li>
-                        <li class="menuItem"><a href="#">MEMBERSHIP</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">PROMOTIONS</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><a href="Login.html">LOGIN</a></li>
-                        <li class="menuItem"><a href="Register.html">REGISTER</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/login')?>">LOGIN</a></li>
+                        <li class="menuItem"><a href="<?php echo site_url('home/register')?>">REGISTER</a></li>
                     </ul>
                 </div>
             </nav>
@@ -142,29 +142,29 @@
         <h2 id="upcomingHead">Coming Soon</h2>
         <div class="row">
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie A</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie B</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie C</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie D</h4>
             </div>
         </div>
         <div class="row">
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie E</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="Placeholder.jpg" alt="Placeholder"></a>
+                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
                 <h4>Placeholder Movie F</h4>
             </div>
             <div class="col1"></div>
@@ -172,7 +172,7 @@
         </div>
     </div>
 
-    <>
+    <script>
         $(window).scroll(function(){
             if($(window).scrollTop()){
                 $('nav').addClass('black');
@@ -181,7 +181,7 @@
                 $('nav').removeClass('black');
             }
         })
-    </>
+    </script>
 
 </body>
 </html>
