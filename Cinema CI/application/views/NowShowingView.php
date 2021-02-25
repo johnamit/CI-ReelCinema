@@ -114,7 +114,7 @@
 
     .col1 img{
         width: 80%;
-        height: 80%;
+        height: 85%;
     }
 
 </style>
@@ -143,38 +143,38 @@
         <h2 id="showingHead">Now Showing</h2>
         <div class="row">
             <div class="col1">
-                <a href="<?php echo site_url('films/thesimpsonsmovie')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="TheSimpsonsMovie"></a>
+                <a href="<?php echo site_url('films/thesimpsonsmovie')?>"><img src="<?php echo base_url();?>images/The Simpsons Movie.jpg" alt="TheSimpsonsMovie"></a>
                 <h4>The Simpsons Movie</h4>
             </div>
             <div class="col1">
-                <a href="<?php echo site_url('films/frozen')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Frozen"></a>
+                <a href="<?php echo site_url('films/frozen')?>"><img src="<?php echo base_url();?>images/Frozen.jpg" alt="Frozen"></a>
                 <h4>Frozen</h4>
             </div>
             <div class="col1">
-                <a href="<?php echo site_url('films/avengersendgame')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="AvengersEndgame"></a>
+                <a href="<?php echo site_url('films/avengersendgame')?>"><img src="<?php echo base_url();?>images/Avengers Endgame.jpg" alt="AvengersEndgame"></a>
                 <h4>Avengers Endgame</h4>
             </div>
             <div class="col1">
-                <a href="<?php echo site_url('films/interstellar')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Interstellar"></a>
+                <a href="<?php echo site_url('films/interstellar')?>"><img src="<?php echo base_url();?>images/Interstellar.jpg" alt="Interstellar"></a>
                 <h4>Interstellar</h4>
             </div>
         </div>
         <div class="row">
             <div class="col1">
-                <a href="<?php echo site_url('films/thewolfofwallstreet')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="TheWolfofWallStreet"></a>
+                <a href="<?php echo site_url('films/thewolfofwallstreet')?>"><img src="<?php echo base_url();?>images/The Wolf of Wall Street.jpg" alt="TheWolfofWallStreet"></a>
                 <h4>The Wolf of Wall Street</h4>
             </div>
             <div class="col1">
-                <a href="<?php echo site_url('films/kingsmanthegoldencircle')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="KingsmanTheGoldenCircle"></a>
+                <a href="<?php echo site_url('films/kingsmanthegoldencircle')?>"><img src="<?php echo base_url();?>images/Kingsman The Golden Circle.jpg" alt="KingsmanTheGoldenCircle"></a>
                 <h4>Kingsman: The Golden Circle</h4>
             </div>
             <div class="col1">
-                <a href="<?php echo site_url('films/babydriver')?>"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="BabyDriver"></a>
+                <a href="<?php echo site_url('films/babydriver')?>"><img src="<?php echo base_url();?>images/Baby Driver.jpg" alt="BabyDriver"></a>
                 <h4>Baby Driver</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie H</h4>
+                <a href="<?php echo site_url('films/americanpsycho')?>"><img src="<?php echo base_url();?>images/American Psycho.jpg" alt="AmericanPsycho"></a>
+                <h4>American Psycho</h4>
             </div>
         </div>
     </div>

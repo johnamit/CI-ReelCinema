@@ -142,30 +142,30 @@
         <h2 id="upcomingHead">Coming Soon</h2>
         <div class="row">
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie A</h4>
+                <a href="<?php echo site_url('films/creed')?>"><img src="<?php echo base_url();?>images/Creed.jpg" alt="Creed"></a>
+                <h4>Creed</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie B</h4>
+                <a href="<?php echo site_url('films/djangounchained')?>"><img src="<?php echo base_url();?>images/Django Unchained.jpg" alt="DjangoUnchained"></a>
+                <h4>Django Unchained</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie C</h4>
+                <a href="<?php echo site_url('films/shrek')?>"><img src="<?php echo base_url();?>images/Shrek.jpg" alt="Shrek"></a>
+                <h4>Shrek</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie D</h4>
+                <a href="<?php echo site_url('films/silenceofthelambs')?>"><img src="<?php echo base_url();?>images/Silence of the Lambs.jpg" alt="Placeholder"></a>
+                <h4>Silence of the Lambs</h4>
             </div>
         </div>
         <div class="row">
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie E</h4>
+                <a href="<?php echo site_url('films/thegreatestshowman')?>"><img src="<?php echo base_url();?>images/The Greatest Showman.jpg" alt="Placeholder"></a>
+                <h4>The Greatest Showman</h4>
             </div>
             <div class="col1">
-                <a href="#"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></a>
-                <h4>Placeholder Movie F</h4>
+                <a href="<?php echo site_url('films/thetheoryofeverything')?>"><img src="<?php echo base_url();?>images/The Theory of Everything.jpg" alt="Placeholder"></a>
+                <h4>The Theory of Everything</h4>
             </div>
             <div class="col1"></div>
             <div class="col1"></div>

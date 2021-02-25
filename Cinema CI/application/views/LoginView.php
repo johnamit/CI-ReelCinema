@@ -226,7 +226,7 @@
             </div>
 
             <div class="inputField">
-                <input type="text" name="password" required>
+                <input type="password" name="password" required>
                 <span></span>
                 <label>Password</label>
             </div>

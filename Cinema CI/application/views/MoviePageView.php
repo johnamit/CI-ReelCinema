@@ -174,8 +174,8 @@
     }
 
     .trailerCol img{
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 140%;
     }
 
     .reviews{
@@ -216,7 +216,7 @@
 
     <?php foreach($results as $info){ ?>
         <div class="movieOverview">
-            <div class="movieImage"><img src="<?php echo base_url();?>images/Placeholder.jpg" alt="Placeholder"></div>
+            <div class="movieImage"><img src="<?php echo base_url();?>images/<?php echo $info['Name']?>.jpg" alt="Placeholder"></div>
             <div class="movieTitle">
                 <h4><?php echo $info['Genre'] ?> &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info['Duration'] ?> &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info['AgeRating'] ?></h4>
                 <h1><?php echo $info['Name'] ?></h1>
@@ -236,9 +236,24 @@
                 <h4><?php echo $info['Cast'] ?></h4>
             </div>
         </div>
+
+        <div class="trailers">
+            <h2 id="trailerHead">Trailers</h2>
+            <div class="row">
+                <div class="trailerCol">
+                    <img src="<?php echo base_url();?>images/<?php echo $info['Name']?>1.jpg" alt="WidePlaceholder">
+                </div>
+                <div class="trailerCol">
+                    <img src="<?php echo base_url();?>images/<?php echo $info['Name']?>2.jpg" alt="WidePlaceholder">
+                </div>
+                <div class="trailerCol">
+                    <img src="<?php echo base_url();?>images/<?php echo $info['Name']?>3.jpg" alt="WidePlaceholder">
+                </div>
+            </div>
+        </div>
     <?php } ?>
 
-    <div class="trailers">
+    <!--<div class="trailers">
         <h2 id="trailerHead">Trailers</h2>
         <div class="row">
             <div class="trailerCol">
@@ -251,7 +266,7 @@
                 <img src="<?php echo base_url();?>images/WidePlaceholder.jpg" alt="WidePlaceholder">
             </div>
         </div>
-    </div>
+    </div>-->
     
     <div class="reviews">
         <h2 id="reviewHead">Reviews</h2>
