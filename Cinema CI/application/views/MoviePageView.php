@@ -228,7 +228,7 @@
             </div>
             <h4 id="releaseDate"><?php echo $info['ReleaseDate'] ?></h4>
             <div class="buyBtn">
-                <button class="buyATicket">Buy A Ticket</button>
+            <a href="<?php echo site_url('tickets/ticketdetails/'.$info['Name'])?>"><button class="buyATicket">Buy A Ticket</button></a>
             </div>
             <div class="castBlock">
                 <br><br>

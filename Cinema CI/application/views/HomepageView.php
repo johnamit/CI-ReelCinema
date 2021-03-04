@@ -59,6 +59,11 @@
         cursor: pointer;
     }
 
+    .menuItem a:hover{
+        color: #ffffff;
+        cursor: pointer;
+    }    
+
     #selected{
         font-weight: bold;
         color: #ffffff;

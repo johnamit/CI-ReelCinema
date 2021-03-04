@@ -16,7 +16,7 @@ class Films extends CI_Controller{
 
     public function avengersendgame(){
         $this->load->model('MovieinfoModel');
-        $data['results'] = $this->MovieinfoModel->retrieveMovieinfo("Avengers: Endgame");
+        $data['results'] = $this->MovieinfoModel->retrieveMovieinfo("Avengers Endgame");
         $this->load->view('MoviePageView', $data);
     }
 
