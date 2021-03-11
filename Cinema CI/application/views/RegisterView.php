@@ -240,10 +240,16 @@
                 <label>Email</label>
             </div>
 
-            <div class="inputField">
+            <div class="inputField" id="inputSpacing">
                 <input type="password" name="password" required>
                 <span></span>
                 <label>Password</label>
+            </div>
+
+            <div class="inputField">
+                <input type="password" name="confirmpass" required>
+                <span></span>
+                <label>Confirm Password</label>
             </div>
 
             <input class="loginBtn" type="submit" value="Register">

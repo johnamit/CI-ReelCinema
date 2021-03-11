@@ -59,11 +59,6 @@
         cursor: pointer;
     }
 
-    .menuItem a:hover{
-        color: #ffffff;
-        cursor: pointer;
-    }    
-
     #selected{
         font-weight: bold;
         color: #ffffff;
@@ -87,7 +82,7 @@
     header{
         height: 90vh;
         width: 100%;
-        background: url(<?php echo base_url();?>images/WelcomeDark.jpg) no-repeat 50% 50%;
+        background: url(<?php echo base_url();?>images/SkyfallHeroDark.jpg) no-repeat 50% 50%;
         background-size: cover;
     }
 
@@ -125,9 +120,17 @@
 
     .HeroText{
         margin: 0;
-        padding-top: 40vh;
+        padding-top: 2px;
         padding-left: 4.5vw;
-        font-size: 110px;
+        font-size: 130px;
+    }
+
+    .durationGenre{
+        margin: 0;
+        padding-top: 30vh;
+        padding-left: 5vw;
+        font-size: 20px;
+        color: #c5c4c4;
     }
 
     span{
@@ -141,32 +144,30 @@
         color: #f5f5f5;
         border: solid 2px #f5f5f5;
         border-radius: 25px;
-        width: 200px;
+        width: 150px;
         height: 40px;
         font-size: 16px;
     }
 
     .buyATicket:hover{
         background: #f5f5f5;
-        color: #000000;
-        cursor: pointer;
+        color: #101113;
     }
 
     .buyBtn{
         display: inline-block;
-        padding-top: 20px;
+        padding-top: 40px;
         padding-left: 9vh;
     }
 
     .buyBtn span{
-        padding-left: 50px;
         border: none;
     }
 
     .buyBtn a{
         text-decoration: none;
         color: #e4e4e4;
-        padding-left: 0px;
+        padding-left: 60px;
         font-size: 18px;
     }
 
@@ -208,15 +209,16 @@
                         <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">PROMOTIONS</a></li>
                         <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><a href="<?php echo site_url('user/login')?>">LOGIN</a></li>
-                        <li class="menuItem"><a href="<?php echo site_url('user/register')?>">REGISTER</a></li>
+                        <li class="menuItem"><?php echo $name; ?></li>
+                        <li class="menuItem"><a href="<?php echo site_url('user/logout')?>">LOGOUT</a></li>
                     </ul>
                 </div>
             </nav>
             <div class="Hero">
-                <h1 class="HeroText">WELCOME TO CINEMA</h1>
+                <h4 class="durationGenre">2h 24min &nbsp;&nbsp; Action, Adventure &nbsp;&nbsp; <span>12A</span></h4>
+                <h1 class="HeroText">SKYFALL</h1>
                 <div class="buyBtn">
-                    <a href="<?php echo site_url('home/nowshowing')?>"><button class="buyATicket">Explore our selection</button></a>
+                    <button class="buyATicket">Buy A Ticket</button>
                     <span><a href="#">Learn More</a></span>
                 </div>
             </div>

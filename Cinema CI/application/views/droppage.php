@@ -69,7 +69,7 @@
 	   
 	      <td>Adult</td>
 	      <td>£11.00</td>
-	      <td><button>Buy</button> </td>
+	      <td><button>Buy</button></td>
 	   </tr>
 	   
 	   <tr>

@@ -6,6 +6,12 @@ class Home extends CI_Controller{
         $this->load->view('HomepageView');
     }
 
+    public function userhome($sessionUser){
+        $userobj = new stdClass();
+        $userobj->name = $sessionUser;
+        $this->load->view('Userhome',$userobj);
+    }
+
     public function nowshowing(){
         $this->load->view('NowShowingView');
     }
