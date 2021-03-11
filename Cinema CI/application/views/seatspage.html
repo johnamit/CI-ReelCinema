@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Seats Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("input:checkbox").change(function(){
+                var selectedSeats = $("input:checkbox:checked").map(function(){
+                    return this.value;
+                }).toArray();
+                console.log(selectedSeats);
+            });
+
+
+        });
+        
+    </script>
+
+</head>
+
+<style>
+    body{
+        font-family: "Helvetica Neue",sans-serif;
+        background-color: #121212;
+        color: #EEF0FE;
+    }
+
+    #seats-title{
+        font-weight: 600;
+        color: #EEF0FE;
+    }
+
+    .coloredSeat{
+        width: 20px;
+        height: 20px;
+        background-color: #EEF0FE;
+    }
+
+    .coloredSeat.checked{
+        background-color: #FFCC00;
+    }
+</style>
+
+<body>
+    
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2 id="seats-title">SEATS PAGE</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-3 mt-1">
+            <div class="col-12"></div>
+        </div>
+
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="1A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="1B">
+            </div>
+            <div class="col-2" id="hidden">
+                <input type="checkbox" class="seat" value="1C">
+            </div>
+            <div class="col-2" id="hidden">
+                <input type="checkbox" class="seat" value="1D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="1E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="1F">
+            </div>
+            
+        </div>
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="2A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="2B">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="2C">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="2D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="2E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="2F">
+            </div>
+        </div>
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="3A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="3B">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="3C">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="3D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="3E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="3F">
+            </div>
+        </div>
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="4A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="4B">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="4C">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="4D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="4E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="4F">
+            </div>
+        </div>
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="5A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="5B">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="5C">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="5D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="5E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="5F">
+            </div>
+        </div>
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="6A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="6B">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="6C">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="6D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="6E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="6F">
+            </div>
+        </div>
+        <div class="row g-3 mt-0">
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="7A">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="7B">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="7C">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="7D">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="7E">
+            </div>
+            <div class="col-2">
+                <input type="checkbox" class="seat" value="7F">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
