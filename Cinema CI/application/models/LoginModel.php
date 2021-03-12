@@ -20,6 +20,12 @@ class LoginModel extends CI_Model{
             return false;
         }
     }
+
+    public function retrieveEmail($name){
+        $sql = "SELECT email FROM Userinfo WHERE email = '{$name}'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
     
 }
 ?>

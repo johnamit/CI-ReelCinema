@@ -10,6 +10,9 @@
 </head>
 
 <style>
+    html{
+        scroll-behavior: smooth;
+    }
 /*---Navbar CSS---*/
     .logo{
         line-height: 60px;
@@ -228,13 +231,24 @@
             </div>
             <h4 id="releaseDate"><?php echo $info['ReleaseDate'] ?></h4>
             <div class="buyBtn">
-            <a href="<?php echo site_url('tickets/ticketdetails/'.$info['Name'])?>"><button class="buyATicket">Buy A Ticket</button></a>
+            <a href="#showtimes"><button class="buyATicket">Buy A Ticket</button></a>
             </div>
             <div class="castBlock">
                 <br><br>
                 <h3>Cast</h3>
                 <h4><?php echo $info['Cast'] ?></h4>
             </div>
+        </div>
+
+        <div class="showtimes" id="showtimes">
+            <?php foreach($showdays as $day){ ?>
+                <h3><?php echo $day['StringDate']?></h3>
+                <?php foreach($showtimes as $time){ ?>
+                    <?php if ($time['StringDate'] == $day['StringDate']){?>
+                        <a href="<?php echo site_url('tickets/ticketdetails/'.$info['Name'].'/'.$time['Time'].'/'.$day['Date'])?>"><button><?php echo $time['TimeHI'];?></button></a>
+                    <?php } ?>
+                <?php } ?>
+            <?php } ?>
         </div>
 
         <div class="trailers">

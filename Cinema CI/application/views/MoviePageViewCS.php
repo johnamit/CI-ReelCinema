@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinema - Movie A</title>
+    <?php foreach($results as $info){ ?>
+        <title><?php echo $info['Name'] ?></title>
+    <?php } ?>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 
@@ -172,8 +174,8 @@
     }
 
     .trailerCol img{
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 140%;
     }
 
     .reviews{
@@ -212,44 +214,59 @@
         </header>
     </div>
 
+    <?php foreach($results as $info){ ?>
+        <div class="movieOverview">
+            <div class="movieImage"><img src="<?php echo base_url();?>images/<?php echo $info['Name']?>.jpg" alt="Placeholder"></div>
+            <div class="movieTitle">
+                <h4><?php echo $info['Genre'] ?> &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info['Duration'] ?> &nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info['AgeRating'] ?></h4>
+                <h1><?php echo $info['Name'] ?></h1>
+            </div>
+            <div class="movieDesc">
+                <h4>
+                    <?php echo $info['Description']?>
+                </h4>
+            </div>
+            <h4 id="releaseDate"><?php echo $info['ReleaseDate'] ?></h4>
+            <div class="buyBtn">
+            <a href="<?php echo site_url('tickets/ticketdetails/'.$info['Name'])?>"><button class="buyATicket">Buy A Ticket</button></a>
+            </div>
+            <div class="castBlock">
+                <br><br>
+                <h3>Cast</h3>
+                <h4><?php echo $info['Cast'] ?></h4>
+            </div>
+        </div>
 
-    <div class="movieOverview">
-        <div class="movieImage"><img src="Placeholder.jpg" alt="Placeholder"></div>
-        <div class="movieTitle">
-            <h4>Drama, Crime Fiction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2h 58min</h4>
-            <h1>Placeholder Movie</h1>
+        <div class="trailers">
+            <h2 id="trailerHead">Trailers</h2>
+            <div class="row">
+                <div class="trailerCol">
+                    <img src="<?php echo base_url();?>images/<?php echo $info['Name']?>1.jpg" alt="WidePlaceholder">
+                </div>
+                <div class="trailerCol">
+                    <img src="<?php echo base_url();?>images/<?php echo $info['Name']?>2.jpg" alt="WidePlaceholder">
+                </div>
+                <div class="trailerCol">
+                    <img src="<?php echo base_url();?>images/<?php echo $info['Name']?>3.jpg" alt="WidePlaceholder">
+                </div>
+            </div>
         </div>
-        <div class="movieDesc">
-            <h4>
-                Quisque libero sem, aliquam et eleifend at, commodo sed leo. Ut quis placerat nulla. Praesent non pretium dolor. Morbi convallis elit eros, in rhoncus est facilisis a. Fusce consequat blandit lectus ac eleifend.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et labore veritatis quas quos molestias iure inventore autem dolorem voluptatem eum animi, aspernatur laudantium. Earum eligendi veritatis, sed dolorum sunt reiciendis.
-            </h4>
-        </div>
-        <h4 id="releaseDate">Release Date</h4>
-        <div class="buyBtn">
-            <button class="buyATicket">Buy A Ticket</button>
-        </div>
-        <div class="castBlock">
-            <h3>Cast</h3>
-            <h4>John Doe &nbsp;&nbsp; Jane Doe &nbsp;&nbsp; Joe Bloggs</h4>
-            <h4>John Doe &nbsp;&nbsp; Jane Doe &nbsp;&nbsp; Joe Bloggs</h4>
-        </div>
-    </div>
+    <?php } ?>
 
-    <div class="trailers">
+    <!--<div class="trailers">
         <h2 id="trailerHead">Trailers</h2>
         <div class="row">
             <div class="trailerCol">
-                <img src="WidePlaceholder.jpg" alt="WidePlaceholder">
+                <img src="<?php echo base_url();?>images/WidePlaceholder.jpg" alt="WidePlaceholder">
             </div>
             <div class="trailerCol">
-                <img src="WidePlaceholder.jpg" alt="WidePlaceholder">
+                <img src="<?php echo base_url();?>images/WidePlaceholder.jpg" alt="WidePlaceholder">
             </div>
             <div class="trailerCol">
-                <img src="WidePlaceholder.jpg" alt="WidePlaceholder">
+                <img src="<?php echo base_url();?>images/WidePlaceholder.jpg" alt="WidePlaceholder">
             </div>
         </div>
-    </div>
+    </div>-->
     
     <div class="reviews">
         <h2 id="reviewHead">Reviews</h2>

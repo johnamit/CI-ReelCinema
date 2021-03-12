@@ -35,26 +35,6 @@
         color: #101113;
     }
 
-    .timeselection{
-        width: 100%;
-        margin: auto;
-        text-align: center;
-    }
-
-    .timeselection select{
-        padding-left: 5px;
-        margin-bottom: 50px;
-        border: none;
-        position: relative;
-        background: #333333;
-        color: #ffffff;
-        width: 400px;
-        height: 40px;
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-    }
-
     .proceedbutton button{
         margin-left: 94vw;
         margin-top: 8rem;
@@ -105,29 +85,26 @@
         cursor: pointer;
     }
 
+    .ticketselection p{
+        padding-top: 0.5rem;
+        margin-left: 33rem; 
+        color: #505050;
+    }
+
 </style>
 
 <body>
     <div class="container">
         <div class="backbutton">
-            <a href="<?php echo site_url('home/nowshowing')?>"><button>Cancel</button></a>
+            <a href="<?php echo site_url('home/canceltonowshowing')?>"><button>Cancel</button></a>
         </div>
 
-        <div class="timeselection">
-        
-            <select>
-                <option value="default" selected disabled hidden>Select a day</option>
-                <?php foreach($timeselectioninfo as $option){ ?>
-                    <option><?php echo $option['Date']?></option>
-                <?php } ?>
-            </select>
-
-            <select name="time">
-                <option value="default" selected disabled hidden>Select a time</option>
-                <?php foreach($timeselectioninfo as $option){ ?>
-                    <option><?php echo $option['Time']?></option>
-                <?php } ?>
-            </select>
+        <div class="basket">
+            <h4>Basket 
+            <?php foreach($basketcount as $bcount){ ?>
+                <span><?php echo ':  '.$bcount['rowCount']?></span>
+            <?php } ?>
+            </h4>
         </div>
 
         <div class="ticketselection">
@@ -141,14 +118,15 @@
                     <tr>
                         <td class="widerow"><?php echo $row['Ticket']?></td>
                         <td class="widerow"><?php echo $row['Price']?></td>
-                        <td class="addticket"><button>Add to Basket</button></td>
+                        <td class="addticket"><a href="<?php echo site_url('basket/basketfunction/'.$row['Ticket'].'/'.$row['Price'].'/'.$row['Seatcount'])?>"><button>Add to Basket</button></td>
                     </tr>
                 <?php } ?>
             </table>
+            <p>*Family Ticket consists of 1 Adult, 2 Child/Teen and 1 more Adult or Child/Teen Ticket</p>
         </div>
 
         <div class="proceedbutton">
-            <a href="<?php echo site_url('home/errorpage')?>"><button>Proceed</button></a>
+            <a href="<?php echo site_url('home/seating')?>"><button>Proceed</button></a>
         </div>    
     </div>
 

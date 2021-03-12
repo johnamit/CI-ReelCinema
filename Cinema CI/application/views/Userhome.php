@@ -209,7 +209,7 @@
                         <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">PROMOTIONS</a></li>
                         <li class="menuItem"><a href="<?php echo site_url('home/errorpage')?>">MEMBERSHIP</a></li>
                         <li class="menuItem"></li><li class="menuItem"></li><li class="menuItem"></li>
-                        <li class="menuItem"><?php echo $name; ?></li>
+                        <li class="menuItem"><?php echo strtoupper($name); ?></li>
                         <li class="menuItem"><a href="<?php echo site_url('user/logout')?>">LOGOUT</a></li>
                     </ul>
                 </div>

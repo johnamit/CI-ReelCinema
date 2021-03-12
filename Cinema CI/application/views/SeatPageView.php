@@ -14,10 +14,18 @@
                 var selectedSeats = $("input:checkbox:checked").map(function(){
                     return this.value;
                 }).toArray();
-                console.log(selectedSeats);
+                var seatsString = selectedSeats.toString();
+                console.log(seatsString);
+
+                $('#proceedbtn').click(function(){
+                    $.ajax({
+                        type: "POST",
+                        url: <?php echo site_url('seat/storeseats'); ?>
+                        data: {"seatString": seatString},  // fix: need to append your data to the call
+                        success: function (data) {}
+                    });
+                });
             });
-
-
         });
         
     </script>
@@ -45,6 +53,29 @@
     .coloredSeat.checked{
         background-color: #FFCC00;
     }
+
+    .proceedbutton button{
+        margin-left: 94vw;
+        margin-top: 8rem;
+        margin-bottom: 2rem;
+        background: #0000;
+        color: #ffffff;
+        border: solid 2px #f5f5f5;
+        border-radius: 25px;
+        width: 90px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .proceedbutton button:hover{
+        background: #ffffff;
+        color: #101113;
+    }
+
+    #roomscreen{
+        background: #EEF0FE;
+        color:#121212;
+    }
 </style>
 
 <body>
@@ -56,8 +87,10 @@
     </div>
 
     <div class="container">
-        <div class="row g-3 mt-1">
-            <div class="col-12"></div>
+        <div class="row g-3 mb-5">
+            <div class="col-12" id="roomscreen">
+                <p>Screen</p>
+            </div>
         </div>
 
         <div class="row g-3 mt-0">
@@ -78,8 +111,7 @@
             </div>
             <div class="col-2">
                 <input type="checkbox" class="seat" value="1F">
-            </div>
-            
+            </div>   
         </div>
         <div class="row g-3 mt-0">
             <div class="col-2">
@@ -202,6 +234,10 @@
             </div>
         </div>
     </div>
+
+    <div class="proceedbutton">
+        <a href="<?php echo site_url('basket/checkoutfunction')?>"><button>Proceed</button></a>
+    </div> 
 
 </body>
 </html>
