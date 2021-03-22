@@ -85,10 +85,15 @@ class Home extends CI_Controller{
     }
 
 
-}
+    }
 
     public function seating(){
         $this->load->view('SeatPageView');
+    }
+
+    public function testnav(){
+        $this->load->view('testnav');
+        $this->load->view('NowShowingViewtest');
     }
 
 }

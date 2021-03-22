@@ -146,7 +146,7 @@
                 <h4>Creed</h4>
             </div>
             <div class="col1">
-                <a href="<?php echo site_url('films/djangounchained')?>"><img src="<?php echo base_url();?>images/Django Unchained.jpg" alt="DjangoUnchained"></a>
+                <a href="<?php echo site_url('films/djangounchained')?>"><img src="<?php echo base_url();?>images/Creed.jpg" alt="Creed"></a>
                 <h4>Django Unchained</h4>
             </div>
             <div class="col1">

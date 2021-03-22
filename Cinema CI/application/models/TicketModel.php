@@ -18,5 +18,11 @@ class TicketModel extends CI_Model{
         return $query->result_array();
     }
 
+    public function retrieveSeatCount(){
+        $sql = "SELECT SUM(Seatcount) as SeatSum FROM Basket";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
 }
 ?>

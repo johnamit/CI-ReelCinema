@@ -44,14 +44,21 @@
         color: #EEF0FE;
     }
 
-    .coloredSeat{
-        width: 20px;
-        height: 20px;
-        background-color: #EEF0FE;
+    span img{
+        height: 60px;
+        width: 60px;
     }
 
-    .coloredSeat.checked{
-        background-color: #FFCC00;
+    .selected{
+        filter: invert(87%) sepia(22%) saturate(7235%) hue-rotate(1deg) brightness(105%) contrast(105%);
+    }
+
+    .available{
+        filter: invert(88%) sepia(4%) saturate(775%) hue-rotate(197deg) brightness(106%) contrast(99%);
+    }
+
+    .booked{
+        filter: invert(29%) sepia(4%) saturate(681%) hue-rotate(175deg) brightness(94%) contrast(93%);
     }
 
     .proceedbutton button{
@@ -76,6 +83,8 @@
         background: #EEF0FE;
         color:#121212;
     }
+
+
 </style>
 
 <body>
@@ -86,150 +95,194 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row g-3 mb-5">
-            <div class="col-12" id="roomscreen">
-                <p>Screen</p>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-12 my-auto text-center" id="roomscreen">
+                Screen
             </div>
         </div>
+    </div>
 
+    <div class="container">
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="1A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="1B">
             </div>
-            <div class="col-2" id="hidden">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="1C">
             </div>
-            <div class="col-2" id="hidden">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="1D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="1E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="1F">
             </div>   
         </div>
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="2A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="2B">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="2C">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="2D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="2E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="2F">
             </div>
         </div>
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="3A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="3B">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="3C">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="3D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="3E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="3F">
             </div>
         </div>
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="4A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="4B">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="4C">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="4D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="4E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="4F">
             </div>
         </div>
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="5A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="5B">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="5C">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="5D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="5E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="5F">
             </div>
         </div>
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="6A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="6B">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="6C">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="6D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="6E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="6F">
             </div>
         </div>
         <div class="row g-3 mt-0">
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="7A">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="7B">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="7C">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="7D">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="7E">
             </div>
-            <div class="col-2">
+            <div class="col-2 text-center">
+                <span class="available"><img src="<?php echo base_url();?>images/movieseat.png" alt="movieseat"></span>
                 <input type="checkbox" class="seat" value="7F">
             </div>
         </div>
