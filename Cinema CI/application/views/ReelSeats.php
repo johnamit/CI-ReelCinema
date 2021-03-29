@@ -21,18 +21,21 @@
                     return this.value;
                 }).toArray();
                 var seatsString = selectedSeats.toString();
+                document.getElementById("seatsString").value = seatsString;
                 console.log(seatsString);
 
                 var maxlimit = <?php foreach($maxseats as $limit){ echo $limit["SeatSum"];}?>;
                 if($(".seat:input:checkbox:checked").length > maxlimit){
-                    this.checked = false;
+                    this.checked = false;                  
                 }
 
                 if($(".seat:input:checkbox:checked").length == maxlimit){
                     $(".proceedbtn").show();
+                    $(".seat:input:checkbox:not(:checked)").parent("label.circle").find("span").removeClass('available').addClass('booked');
                 }
                 else{
                     $(".proceedbtn").hide();
+                    $(".seat:input:checkbox:not(:checked)").parent("label.circle").find("span").removeClass('booked').addClass('available');
                 }
 
                 if ($(this).is(':checked')) {
@@ -41,7 +44,9 @@
                 else{
                     $(this).parent("label.circle").find("span").removeClass('selected').addClass('available');
                 }
+
             });
+
         });
         
     </script>
@@ -120,6 +125,9 @@
         border: none;
     }
 
+    #seatsString{
+        display: none;
+    }
 </style>
 
 <body>
@@ -409,7 +417,10 @@
                     </label>
                 </div>
             </div>
-            <div class="proceedbtn text-center"><a href="<?php echo site_url('reel/billing')?>"><button>Proceed to Checkout</button></a></div>
+            <?php echo form_open('reel/checkout');?>
+                <input id="seatsString" name="seatselection" type="text"/>
+                <div class="proceedbtn text-center"><button type="submit">Proceed to Checkout</button></div>
+            </form>
         </div> 
     </div>
 

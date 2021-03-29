@@ -10,6 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
+    <script></script>
+
 </head>
 
 <style>
@@ -89,6 +91,21 @@
         font-weight: 600;
     }
 
+    #proceedtopayment{
+        width: 100%;
+        font-weight: 700;
+        color: #121212;
+        background: #FFCC00;
+        border: solid 2px #121212;
+        border-radius: 25px;
+    }
+
+    #proceedtopayment{
+        border: none;
+    }
+
+
+
 </style>
 
 <body>
@@ -159,15 +176,21 @@
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-6 selectField">
-                                <select id="address-country" class="form-control">
-                                    <option id="countryDefault" value="Default" selected disabled>Country</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="United States">United States</option>
-                                    <option value="Canada">Canada</option>
-                                </select>  
-
+                            <select id="address-country" class="form-control">
+                                <option id="countryDefault" value="Default" selected disabled>Country</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="United States">United States</option>
+                                <option value="Canada">Canada</option>
+                            </select>  
                         </div>
 
+                    </div>
+
+                    <div class="row g-3">
+                        <br><br>
+                        <hr>
+                        <div class="proceedbtn text-center"><a href="<?php echo site_url('reel/payment')?>"><button id="proceedtopayment" type="submit" class="btn btn-lg btn-block">Proceed to Payment</button></a></div>
+                        <br><br><br>
                     </div>
 
                 </form>

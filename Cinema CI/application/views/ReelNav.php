@@ -40,7 +40,7 @@
 
         body {
             margin: 0;
-            background: #121212;
+
         }
 
         .logo{

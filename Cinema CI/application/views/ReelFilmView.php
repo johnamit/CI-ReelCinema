@@ -87,26 +87,26 @@
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/American Psycho')?>"><img id="pFilm" src="<?php echo base_url();?>images/American Psycho.jpg" alt="AmericanPsycho"></a>
+                        <h4 class="text-left pt-3">American Psycho</h4>
                     </div>
-                    <h4 class="text-left pt-3">American Psycho</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/Avengers Endgame')?>"><img id="pFilm" src="<?php echo base_url();?>images/Avengers Endgame.jpg" alt="AvengersEndgame"></a>
+                        <h4 class="text-left pt-3">Avengers Endgame</h4>
                     </div>
-                    <h4 class="text-left pt-3">Avengers Endgame</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/Baby Driver')?>"><img id="pFilm" src="<?php echo base_url();?>images/Baby Driver.jpg" alt="BabyDriver"></a>
-                    </div>
-                    <h4 class="text-left pt-3">Baby Driver</h4>
+                        <h4 class="text-left pt-3">Baby Driver</h4>
+                    </div>  
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/Frozen')?>"><img id="pFilm" src="<?php echo base_url();?>images/Frozen.jpg" alt="Frozen"></a>
+                        <h4 class="text-left pt-3">Frozen</h4>
                     </div>
-                    <h4 class="text-left pt-3">Frozen</h4>
                 </div>
             </div>
 
@@ -114,26 +114,26 @@
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/Interstellar')?>"><img id="pFilm" src="<?php echo base_url();?>images/Interstellar.jpg" alt="Interstellar"></a>
+                        <h4 class="text-left pt-3">Interstellar</h4>
                     </div>
-                    <h4 class="text-left pt-3">Interstellar</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/Kingsman The Golden Circle')?>"><img id="pFilm" src="<?php echo base_url();?>images/Kingsman The Golden Circle.jpg" alt="KingsmanTheGoldenCircle"></a>
+                        <h4 class="text-left pt-3">Kingsman The Golden Circle</h4>
                     </div>
-                    <h4 class="text-left pt-3">Kingsman The Golden Circle</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/The Simpsons Movie')?>"><img id="pFilm" src="<?php echo base_url();?>images/The Simpsons Movie.jpg" alt="TheSimpsonsMovie"></a>
+                        <h4 class="text-left pt-3">The Simpsons Movie</h4>
                     </div>
-                    <h4 class="text-left pt-3">The Simpsons Movie</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href="<?php echo site_url('reel/filmpage/The Wolf of Wall Street')?>"><img id="pFilm" src="<?php echo base_url();?>images/The Wolf of Wall Street.jpg" alt="TheWolfofWallStreet"></a>
+                        <h4 class="text-left pt-3">The Wolf of Wall Street</h4>
                     </div>
-                    <h4 class="text-left pt-3">The Wolf of Wall Street</h4>
                 </div>
             </div>  
         </div>
@@ -147,48 +147,48 @@
             <div class="row">
                 <div class="col">
                     <div class="colimg text-center">
-                        <a href=""><img id="pFilm" src="<?php echo base_url();?>images/A Silent Voice.jpg" alt="A Silent Voice"></a>
+                        <a href="<?php echo site_url('reel/filmpage/A Silent Voice')?>"><img id="pFilm" src="<?php echo base_url();?>images/A Silent Voice.jpg" alt="A Silent Voice"></a>
+                        <h4 class="text-left pt-3">A Silent Voice</h4>
                     </div>
-                    <h4 class="text-left pt-3">A Silent Voice</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
                         <a href=""><img id="pFilm" src="<?php echo base_url();?>images/Creed.jpg" alt="Creed"></a>
+                        <h4 class="text-left pt-3">Creed</h4>
                     </div>
-                    <h4 class="text-left pt-3">Creed</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
-                        <a href=""><img id="pFilm" src="<?php echo base_url();?>images/Django Unchained.jpg" alt="DjangoUnchained"></a>
+                        <a href="<?php echo site_url('reel/filmpage/Django Unchained')?>"><img id="pFilm" src="<?php echo base_url();?>images/Django Unchained.jpg" alt="DjangoUnchained"></a>
+                        <h4 class="text-left pt-3">Django Unchained</h4>
                     </div>
-                    <h4 class="text-left pt-3">Django Unchained</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
-                        <a href=""><img id="pFilm" src="<?php echo base_url();?>images/Shrek.jpg" alt="Shrek"></a>
+                        <a href="<?php echo site_url('reel/filmpage/Shrek')?>"><img id="pFilm" src="<?php echo base_url();?>images/Shrek.jpg" alt="Shrek"></a>
+                        <h4 class="text-left pt-3">Shrek</h4>
                     </div>
-                    <h4 class="text-left pt-3">Shrek</h4>
                 </div>
             </div>
 
             <div class="row pt-5">
                 <div class="col">
                     <div class="colimg text-center">
-                        <a href=""><img id="pFilm" src="<?php echo base_url();?>images/Silence of the Lambs.jpg" alt="Silence of the Lambs"></a>
+                        <a href="<?php echo site_url('reel/filmpage/Silence of the Lambs')?>"><img id="pFilm" src="<?php echo base_url();?>images/Silence of the Lambs.jpg" alt="Silence of the Lambs"></a>
+                        <h4 class="text-left pt-3">Silence of the Lambs</h4>
                     </div>
-                    <h4 class="text-left pt-3">Silence of the Lambs</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
-                        <a href=""><img id="pFilm" src="<?php echo base_url();?>images/The Greatest Showman.jpg" alt="The Greatest Showman"></a>
+                        <a href="<?php echo site_url('reel/filmpage/The Greatest Showman')?>"><img id="pFilm" src="<?php echo base_url();?>images/The Greatest Showman.jpg" alt="The Greatest Showman"></a>
+                        <h4 class="text-left pt-3">The Greatest Showman</h4>
                     </div>
-                    <h4 class="text-left pt-3">The Greatest Showman</h4>
                 </div>
                 <div class="col">
                     <div class="colimg text-center">
-                        <a href=""><img id="pFilm" src="<?php echo base_url();?>images/The Theory of Everything.jpg" alt="The Theory of Everything"></a>
+                        <a href="<?php echo site_url('reel/filmpage/The Theory of Everything')?>"><img id="pFilm" src="<?php echo base_url();?>images/The Theory of Everything.jpg" alt="The Theory of Everything"></a>
+                        <h4 class="text-left pt-3">The Theory of Everything</h4>
                     </div>
-                    <h4 class="text-left pt-3">The Theory of Everything</h4>
                 </div>
                 <div class="col"></div>
             </div>

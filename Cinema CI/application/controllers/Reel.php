@@ -6,9 +6,54 @@ class Reel extends CI_Controller{
         $this->load->view('ReelNav');
     }
 
+    // Confirmation -----------------------------------------------------------------
+    public function confirmation(){
+        $this->load->view('ReelConfirmation');
+    }
+
     // Billing -----------------------------------------------------------------
-    public function billing(){
-        $this->load->view("ReelBilling");
+
+    public function checkout(){
+        $this->form_validation->set_rules("forename","Forename","required|alpha");
+        $this->form_validation->set_rules("surname","Surname","required|alpha");
+        $this->form_validation->set_rules("email","Email","required|valid_email");
+
+        $this->form_validation->set_rules("cardname","Cardholder name","required|alpha");
+        $this->form_validation->set_rules("cardnumber","Card number","required|numeric");
+        $this->form_validation->set_rules("expiry","Expiration date","required|numeric");
+        $this->form_validation->set_rules("cvc","CVC","required|numeric");
+
+        $Seats = $this->input->post('seatselection');
+        $Seats = str_replace(",",", ",$Seats);
+
+        if(empty($Seats) == false){
+            $this->session->set_userdata('parseSeats', $Seats);
+        }
+          
+        $Moviename = $this->session->userdata('parseMoviename');
+        $Moviename = str_replace("%20"," ",$Moviename);
+        $this->load->model('MovieinfoModel');
+        $data['movieinfo'] = $this->MovieinfoModel->retrieveMovieinfo($Moviename);
+        $this->load->model('BasketModel');
+        $data['subtotal'] = $this->BasketModel->retrieveSubtotal();
+
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('ReelCheckout', $data);
+        }
+        else{
+            $Forename = $this->input->post('forename');
+            $Surname = $this->input->post('surname');
+            $Email = $this->input->post('email');
+            $Cardnumber = $this->input->post('cardnumber');
+            if(empty($Forename) == false && empty($Surname) == false){
+                $this->session->set_userdata('parseForename', $Forename);
+                $this->session->set_userdata('parseSurname', $Surname);
+            }
+            $this->load->model('PaymentModel');
+            $this->PaymentModel->removeFromPayment();
+            $this->PaymentModel->addToPayment($Forename, $Surname, $Email, $Cardnumber);
+            $this->load->view('ReelConfirmation', $data);
+        }
     }
 
     public function payment(){
@@ -75,6 +120,9 @@ class Reel extends CI_Controller{
 
     // Films -----------------------------------------------------------------
     public function film(){
+        $this->load->model('BasketModel');
+        $this->BasketModel->clearBasket();
+
         $this->load->view('ReelFilmView');
     }
 

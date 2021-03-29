@@ -62,7 +62,7 @@
     .ticketsection p{
         margin-left: 10rem;
         padding-top: 15px;
-        color: #4c4c4c;
+        color: #ffcc00;
     }
 
     .ticketsection p, .widerow-data, .addticket button, .removeticket button{
@@ -173,6 +173,7 @@
             <div class="col-4 y">
                 <div class="container basketsection">
                     <h2 class="basketsection-title">BASKET <span><?php foreach($basketcount as $bcount){echo $bcount['rowCount'];}?></span></h2>
+                    <h5><?php echo $this->session->userdata('parseDay');?>&nbsp;&nbsp;<?php echo $this->session->userdata('parseTime');?></h5>
                     <br>
                     <table>
                     <?php foreach($basketitems as $items){ ?>

@@ -23,6 +23,12 @@ class BasketModel extends CI_Model{
         return $query->result_array();
     }
 
+    public function retrievefilmTime(){
+        $sql = "SELECT DISTINCT Time FROM Basket";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
     public function retrieveSubtotal(){
         $sql = "SELECT SUM(Price) as Subtotal FROM Basket";
         $query = $this->db->query($sql);
