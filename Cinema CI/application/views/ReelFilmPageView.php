@@ -16,7 +16,7 @@
 
     <script>
 	    $(document).ready(function(){
-            $('#castsection, #screentimesection, #reviewsection').hide();
+            $('#castsection, #screentimesection, #reviewsection, #inputarea').hide();
             
             $('#cast a').click(function(event){
                 $(this).css('color', '#fff');
@@ -37,7 +37,17 @@
                 $('#cast a, #screentime a').css('color', '#121212');
                 $('#reviewsection').show();
                 $('#screentimesection, #castsection').hide();
+                $('#writeReview').click(function(){
+                    $('#inputarea').show();
+                });
+                $('.cancelReview').click(function(event){
+                    event.preventDefault();
+                    $('#inputarea').hide();
+                    $('#reviewfield').val('');
+                });
             });
+
+
 		});
 	</script>
 </head>
@@ -154,6 +164,54 @@
         color: #FFCC00;
     }
 
+    #reviewername{
+        color: #FFCC00;
+        text-transform: uppercase;
+    }
+
+    #reviewfield{
+        background: #121212;
+        border: 1px solid #FFCC00;
+        border-radius: 10px;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .postReview{
+        background: #FFCC00;
+        border: 2px solid #121212;
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+        color: #121212;
+        font-weight: 600;
+    }
+
+    .postReview:hover{
+        border: none;
+    }
+
+    #writeReview{
+        border: none;
+        background: none;
+        color: #fff;
+        padding: 0;
+    }
+
+    #writeReview:hover{
+        color: #FFCC00;
+    }
+
+    .cancelReview{
+        background: #121212;
+        border: 2px solid #FFCC00;
+        border-radius: 25px;
+        width: 150px;
+        height: 50px;
+        color: #FFCC00;
+        font-weight: 600;
+    }
+
 </style>
 
 <body>
@@ -170,7 +228,7 @@
         </div>
 
         <div class="container-fluid" id="movieContainer">
-            <?php foreach($results as $info){ ?>
+            <?php foreach($results as $info){ $this->session->set_userdata('reviewMoviename', $info['Name']);?>
             <div class="row" style="background-image: url('<?php echo base_url();?>images/background/<?php echo $info['Name']?> Background.png');">
                 <div class="col my-auto mx-5">
                     <div class="movieTitle pb-4">
@@ -179,11 +237,12 @@
                     </div>
                     <div class="movieDesc pb-3"><h4><?php echo $info['Description']?></h4></div>
                     <div class="releaseinfo pb-4"><h4 id="releaseDate"><?php echo $info['ReleaseDate'] ?></h4></div>
-                    <div class="buyBtn"><a href="#showtimes"><button class="buyATicket">Watch Trailer</button></a></div>
+                    <div class="buyBtn"><a href=""><button class="buyATicket">Watch Trailer</button></a></div>
                 </div>
             </div>
             <?php } ?>
         </div>
+
 
         <div class="container-fluid py-3" id="optionselector">
             <div class="row text-center" id="optionrow">
@@ -196,7 +255,8 @@
         <div class="container pt-2 pb-4" id="castsection">
             <?php foreach($results as $info){?>
                 <div class="castbox pt-5">
-                    <h4><?php echo $info['Cast'] ?></h4>
+                    <h4>Director: <?php echo $info['Director'] ?></h4><br>
+                    <h4>Cast: <?php echo $info['Cast'] ?></h4>
                 </div>
             <?php } ?>
         </div>
@@ -214,16 +274,31 @@
                     </div>
                 </div>
             <?php } ?>
+            <h6>*Bookings will only be saved under booking history for registered members</h6>
         </div>
 
 
         <div class="container pt-2 pb-4" id="reviewsection">
             <div class="reviewbox pt-5">
-                <a href=""><h4>Write a review</h4></a>
+                <a href="#inputarea"><button id="writeReview"><h4>Write a review</h4></button></a>
+                <div id="inputarea">
+                    <?php echo form_open('reel/reviewfunction');?>
+                        <textarea class="mt-3" name="reviewfield" id="reviewfield" cols="60" rows="2" placeholder="Enter a review"></textarea><br><br>
+                        <input class="postReview mb-3" type="submit" value="Post Review">
+                        <button class="cancelReview">Cancel</button>
+                    </form>
+                </div>
             </div>
+
+            <hr>
+            <?php foreach($reviews as $review){?>
+                <div class="reviewsection pt-4" id="reviews">
+                    <h5>"<?php echo $review['Message']?>"</h5>
+                    <h6 id="reviewername"><?php echo $review['Forename']." ".$review['Surname']?></h6>
+                </div> 
+            <?php } ?>                           
         </div>
-        
+
     </div>
-    
 </body>
 </html>

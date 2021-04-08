@@ -6,10 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/fontstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <title>Reel | BillingTest</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            <?php if($this->session->has_userdata('name')){ ?>
+                document.getElementById("forename").value = "<?php echo $this->session->userdata('name');?>";
+                document.getElementById("surname").value = "<?php echo $this->session->userdata('lastname');?>";
+                document.getElementById("email").value = "<?php echo $this->session->userdata('sessionEmail');?>";
+            <?php } ?>
+            
 
+        });
+    </script>
 </head>
 
 <style>
@@ -88,6 +99,19 @@
         color: #FFCC00;
     }
 
+    .footer div{
+        font-family: Arial, Helvetica, sans-serif;
+        border-bottom: none;
+    }
+
+    i{
+        font-size: 20px;
+    }
+
+    .footerlogo img{
+        height: 60px;
+    }
+
 </style>
 
 <body>
@@ -114,6 +138,7 @@
                         <div class="col-12"><h5>Date: &nbsp;&nbsp;&nbsp; <?php echo $this->session->userdata('parseDay');?></h5></div>
                         <div class="col-12"><h5>Time: &nbsp;&nbsp;&nbsp; <?php echo $this->session->userdata('parseTime');?></h5></div>
                         <div class="col-12"><h5>Seats: &nbsp; <?php echo $this->session->userdata('parseSeats');?></h5></div>
+                        <div class="col-12"><h5>Screen: &nbsp; <?php echo $this->session->userdata('parseScreen');?></h5></div>
                         <div class="col-12"><h5 class="subtotal">Total: &nbsp;&nbsp;&nbsp; <?php foreach($subtotal as $subval){echo $subval['Subtotal'];}?></h5></div>
                     </div>
                 </div>
@@ -155,13 +180,13 @@
 
                 <div class="col-12">
                     <label for="cardnumber" class="form-label"></label>
-                    <input type="text" id="cardnumber" name="cardnumber" value="<?php echo set_value('cardnumber') ?>" class="form-control" placeholder="Card number" required>
+                    <input type="text" id="cardnumber" name="cardnumber" value="<?php echo set_value('cardnumber') ?>" class="form-control" placeholder="Card number" maxlength="16" required>
                     <?php echo form_error('cardnumber','<div class="errorreport">','</div>') ?>
                 </div>
 
                 <div class="col-sm-2">
                     <label for="expiry" class="form-label"></label>
-                    <input type="text" id="expiry" name="expiry" value="<?php echo set_value('expiry') ?>" class="form-control" placeholder="Exp (MM/YY)" required>
+                    <input type="text" id="expiry" name="expiry" value="<?php echo set_value('expiry') ?>" class="form-control" placeholder="Exp (MM/YY)" minlength="4" maxlength="4" required>
                     <?php echo form_error('expiry','<div class="errorreport">','</div>') ?>
                 </div>
 
@@ -175,11 +200,26 @@
 
             </div>
 
-            <div class="row pt-5">
+            <div class="row py-5">
                 <button id="paybtn" type="submit" class="btn btn-lg btn-block">PAY WITH CARD</button>
             </div>
         </form>
     </div>
-    
+
+    <div class="footer px-5 py-5">
+        <br><br>
+        <div class="row">
+            <div class="col-3 footerlogo"><img src="<?php echo base_url();?>images/LogoWhite.png" alt="REEL"></div>
+            <div class="col-3">ABOUT US<br>MEMBERSHIP<br>GIFT CARDS<br>CAREERS</div>
+            <div class="col-3">TERMS AND CONDITIONS<br>COOKIE POLICY<br>PRIVACY POLICY<br>ALLERGENS AND NUTRITION<br>MODERN SLAVERY STATEMENT</div>
+            <div class="col-2"></div>
+            <div class="col-1 text-center"><i class="bi bi-facebook"></i><br><i class="bi bi-instagram"></i><br><i class="bi bi-twitter"></i><br><i class="bi bi-youtube"></i></div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-3">REEL Cinemas. All rights reserved.</div>
+        </div>
+    </div>
 </body>
 </html>

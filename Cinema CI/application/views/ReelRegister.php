@@ -191,7 +191,7 @@
                 </div>
                 <div class="container" id="RMessage">
                     <h2>ALREADY A MEMBER?</h2>
-                    <h4 class="py-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto cum nobis quod at, debitis incidunt quo fuga illo fugiat magnam consequuntur.</h4>
+                    <h4 class="py-4">Login to access exclusive member discounts, faster checkout and more.</h4>
                     <a href="<?php echo site_url('reel/login')?>"><button class="toLoginBtn">Login</button></a>
                 </div>
             </div>

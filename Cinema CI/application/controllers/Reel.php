@@ -6,6 +6,54 @@ class Reel extends CI_Controller{
         $this->load->view('ReelNav');
     }
 
+    // Footer -------------------------------------------------------------------
+    public function footer(){
+        $this->load->view('ReelFooter');
+    }
+
+    // Booking History -------------------------------------------------------------
+    public function bookingprocess(){
+        $emailParse = $this->input->post('emailParse');
+        $forenameParse = $this->input->post('forenameParse');
+        $surnameParse = $this->input->post('surnameParse');
+        $movienameParse = $this->input->post('movienameParse');
+        $dateParse = $this->input->post('dateParse');
+        $timeParse = $this->input->post('timeParse');
+        $screenParse = $this->input->post('screenParse');
+        $seatParse = $this->input->post('seatParse');
+
+        $this->load->model('LoginModel');
+        $this->LoginModel->postBookingHistory($emailParse, $forenameParse, $surnameParse, $movienameParse, $dateParse, $timeParse, $screenParse, $seatParse);
+
+        $this->load->model('PaymentModel');
+        $this->PaymentModel->removeFromPayment();
+        redirect('reel/home');
+    }
+
+    public function booking(){
+        $checkEmail = $this->session->userdata('sessionEmail');
+        $this->load->model('LoginModel');
+        $data['bookinginfo'] = $this->LoginModel->retrieveBookingHistory($checkEmail);
+        if($this->session->has_userdata('name')){
+            $this->load->view('ReelBookingHistory', $data);
+        }
+        else{
+            redirect('reel/login');
+        }
+    }
+
+    public function historyCheck($Forename, $Surname, $Moviename, $Time, $Date, $Screen, $Seat){
+        $this->session->set_userdata('historyForename', $Forename);
+        $this->session->set_userdata('historySurname', $Surname);
+        $this->session->set_userdata('historyMoviename', $Moviename);
+        $this->session->set_userdata('historyTime', $Time);
+        $this->session->set_userdata('historyDay', $Date);
+        $this->session->set_userdata('historyScreen', $Screen);
+        $this->session->set_userdata('historySeats', $Seat);
+        
+        $this->load->view('ReelHistoryConfirmation');
+    }
+
     // Confirmation -----------------------------------------------------------------
     public function confirmation(){
         $this->load->view('ReelConfirmation');
@@ -18,10 +66,10 @@ class Reel extends CI_Controller{
         $this->form_validation->set_rules("surname","Surname","required|alpha");
         $this->form_validation->set_rules("email","Email","required|valid_email");
 
-        $this->form_validation->set_rules("cardname","Cardholder name","required|alpha");
-        $this->form_validation->set_rules("cardnumber","Card number","required|numeric");
-        $this->form_validation->set_rules("expiry","Expiration date","required|numeric");
-        $this->form_validation->set_rules("cvc","CVC","required|numeric");
+        $this->form_validation->set_rules("cardname","Cardholder name","required|regex_match[/^[a-zA-Z ]*$/]");
+        $this->form_validation->set_rules("cardnumber","Card number","required|numeric|exact_length[16]");
+        $this->form_validation->set_rules("expiry","Expiration date","required|numeric|exact_length[4]");
+        $this->form_validation->set_rules("cvc","CVC","required|numeric|min_length[3]|max_length[4]");
 
         $Seats = $this->input->post('seatselection');
         $Seats = str_replace(",",", ",$Seats);
@@ -48,6 +96,7 @@ class Reel extends CI_Controller{
             if(empty($Forename) == false && empty($Surname) == false){
                 $this->session->set_userdata('parseForename', $Forename);
                 $this->session->set_userdata('parseSurname', $Surname);
+                $this->session->set_userdata('parseEmail', $Email);
             }
             $this->load->model('PaymentModel');
             $this->PaymentModel->removeFromPayment();
@@ -133,10 +182,33 @@ class Reel extends CI_Controller{
         $this->load->model('TicketModel');
         $data['showdays'] = $this->TicketModel->retrieveDay($name);
         $data['showtimes'] = $this->TicketModel->retrieveTime($name);
+        $this->load->model('ReviewModel');
+        $data['reviews'] = $this->ReviewModel->retrieveReview($name);
         $this->load->view('ReelFilmPageView',$data);
     }
 
+    public function reviewfunction(){
+        $reviewMoviename = $this->session->userdata('reviewMoviename');
 
+        $reviewMoviename = str_replace("%20"," ",$reviewMoviename);
+
+        if($this->session->has_userdata('name')){
+            $reviewerForename = $this->session->userdata('name');
+            $reviewerSurname = $this->session->userdata('lastname');
+            $reviewerEmail = $this->session->userdata('sessionEmail');
+        }
+        else{
+            $reviewerForename = "Guest";
+            $reviewerSurname = "User";
+            $reviewerEmail = " ";
+        }
+        $reviewMessage = $this->input->post('reviewfield');
+
+        $this->load->model('ReviewModel');
+        $this->ReviewModel->addReview($reviewerForename, $reviewerSurname, $reviewerEmail, $reviewMessage, $reviewMoviename);
+
+        redirect('reel/filmpage/'.$reviewMoviename);
+    }
 
 
     // Login -----------------------------------------------------------------
@@ -164,7 +236,10 @@ class Reel extends CI_Controller{
         }
         else{ 
             $sessionUser = $this->LoginModel->retrieveName($email);
+            $sessionUserSurname = $this->LoginModel->retrieveLastname($email);
             $this->session->set_userdata('name',$sessionUser);
+            $this->session->set_userdata('lastname',$sessionUserSurname);
+            $this->session->set_userdata('sessionEmail',$email);
             redirect('reel/home');
         }
     }
@@ -184,8 +259,14 @@ class Reel extends CI_Controller{
         $password = $this->input->post('password');
         $confirmPass = $this->input->post('confirmpass');
         if($password == $confirmPass){
-            $sendUserDetails = $this->RegisterModel->registerUser($forename, $surname, $email, $password);
-            redirect('reel/home');
+            $checkResult = $this->RegisterModel->checkRegister($email);
+            if(checkResult == false){
+                $this->RegisterModel->registerUser($forename, $surname, $email, $password);
+                redirect('reel/home');
+            }
+            else{
+                redirect('reel/login');
+            }
         }
         else{
             redirect('reel/register');
@@ -197,14 +278,23 @@ class Reel extends CI_Controller{
     // Logout -----------------------------------------------------------------
     public function logout(){
         $this->session->unset_userdata('name');
+        $this->session->unset_userdata('lastname');
+        $this->session->unset_userdata('sessionEmail');
         redirect('reel/home');
     }
 
 
     // Seats -----------------------------------------------------------------
     public function seats(){
+        $Moviename = $this->session->userdata('parseMoviename');
+        $Moviename = str_replace("%20"," ",$Moviename);
+        $Time = $this->session->userdata('parseTime');
+        $Day = $this->session->userdata('parseDay');
+
         $this->load->model('TicketModel');
         $data['maxseats'] = $this->TicketModel->retrieveSeatCount();
+        $data['screenno'] = $this->TicketModel->retrieveScreen($Moviename,$Day,$Time);
+        $data['bookedseats'] = $this->TicketModel->bookedSeats($Moviename,$Day,$Time);
         $this->load->view('ReelSeats',$data);
     }
 }

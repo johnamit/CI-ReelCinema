@@ -24,5 +24,16 @@ class TicketModel extends CI_Model{
         return $query->result_array();
     }
 
+    public function retrieveScreen($Moviename, $Date, $Time){
+        $sql = "SELECT Screen FROM Timeselection WHERE Moviename='{$Moviename}' AND Date='{$Date}' AND Time='{$Time}'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+
+    public function bookedSeats($Moviename, $Date, $Time){
+        $sql = "SELECT Seat FROM Booking WHERE Moviename='{$Moviename}' AND Date='{$Date}' AND Time='{$Time}'";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

@@ -14,6 +14,17 @@
 
     <script>
         $(document).ready(function(){
+            var bookedList = [];
+            <?php foreach($bookedseats as $booked){?>
+                var bookedSet = "<?php echo $booked['Seat'];?>"
+                var splitSeats = bookedSet.split(", ");
+                var bookedList = bookedList.concat(splitSeats);
+            <?php } ?>
+            $.each(bookedList, function(index, value){
+                $('input[class="seat"][value="'+value.toString()+'"]').attr("disabled", true);
+                $('input[class="seat"][value="'+value.toString()+'"]').parent("label.circle").find("span").removeClass('available').addClass('booked');
+            });
+
             $(".proceedbtn").hide();
 
             $("input:checkbox").change(function(){
@@ -26,16 +37,22 @@
 
                 var maxlimit = <?php foreach($maxseats as $limit){ echo $limit["SeatSum"];}?>;
                 if($(".seat:input:checkbox:checked").length > maxlimit){
-                    this.checked = false;                  
+                    this.checked = false;              
                 }
 
                 if($(".seat:input:checkbox:checked").length == maxlimit){
                     $(".proceedbtn").show();
+                    $(".seat:input:checkbox:not(:checked)").attr("disabled", true);
                     $(".seat:input:checkbox:not(:checked)").parent("label.circle").find("span").removeClass('available').addClass('booked');
                 }
                 else{
                     $(".proceedbtn").hide();
+                    $(".seat:input:checkbox:not(:checked)").attr("disabled", false);
                     $(".seat:input:checkbox:not(:checked)").parent("label.circle").find("span").removeClass('booked').addClass('available');
+                    $.each(bookedList, function(index, value){
+                        $('input[class="seat"][value="'+value.toString()+'"]').attr("disabled", true);
+                        $('input[class="seat"][value="'+value.toString()+'"]').parent("label.circle").find("span").removeClass('available').addClass('booked');
+                    });
                 }
 
                 if ($(this).is(':checked')) {
@@ -148,7 +165,7 @@
         <div class="container d-flex flex-column min-vh-100 justify-content-center " id="seatContainer">
             <div class="row mb-5" id="screen">
                 <div class="col-12 roomscreen"></div>
-                <div class="col-12 text-center roomscreen" id="filler"><br>Screen</div>
+                <div class="col-12 text-center roomscreen" id="filler"><br>Screen <?php foreach($screenno as $screen){echo $screen['Screen']; $this->session->set_userdata('parseScreen', $screen['Screen']);}?></div>
             </div>
 
             <div class="row g-3 mt-0" id="seats">

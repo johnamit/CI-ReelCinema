@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/fontstyle.css">
 		<title>Reel | Nav</title>
@@ -26,6 +27,37 @@
 				});
 				$('.menu-close img').mouseout(function(){
 					this.src = "<?php echo base_url();?>images/close.png";
+				});
+
+				var timeline = new TimelineMax({ paused: true });
+
+				timeline.to(".nav-container", 1, {
+					left: 0,
+					ease: Expo.easeInOut,
+				});
+
+				timeline.staggerFrom(
+					".menu > div",
+					0.8,
+					{ y: 100, opacity: 0, ease: Expo.easeOut },
+					"0.1",
+					"-=0.4"
+				);
+
+				timeline.staggerFrom(
+					".menubottom",
+					0.8,
+					{ y: 100, opacity: 0, ease: Expo.easeOut },
+					"0.4",
+					"-=0.6"
+				);
+
+				timeline.reverse();
+				$(document).on("click", ".menu-open", function () {
+					timeline.reversed(!timeline.reversed());
+				});
+				$(document).on("click", ".menu-close", function () {
+					timeline.reversed(!timeline.reversed());
 				});
 			});
 		</script>
@@ -137,55 +169,22 @@
 			<div class="menubottom">
 				<span id="setUser"><?php echo $this->session->userdata('name');?></span>
 				<a href="<?php echo site_url('reel/logout')?>"><span>Logout</span></a>
-				<a href="#"><span>Basket</span></a>
 			</div>
 			<nav class="menu">
 				<div class="menu__item">
 					<a class="menu__item-link" href="<?php echo site_url('reel/film')?>">Films</a>
 				</div>
 				<div class="menu__item">
-					<a class="menu__item-link">Membership</a>
+					<a class="menu__item-link">Reel Rewards</a>
 				</div>
 				<div class="menu__item">
 					<a class="menu__item-link">About</a>
 				</div>
 				<div class="menu__item">
-					<a class="menu__item-link">Contact</a>
+					<a class="menu__item-link" href="<?php echo site_url('reel/booking')?>">Bookings</a>
 				</div>
 			</nav>
 		</div>
 
-		<script>
-			var t1 = new TimelineMax({ paused: true });
-
-			t1.to(".nav-container", 1, {
-				left: 0,
-				ease: Expo.easeInOut,
-			});
-
-			t1.staggerFrom(
-				".menu > div",
-				0.8,
-				{ y: 100, opacity: 0, ease: Expo.easeOut },
-				"0.1",
-				"-=0.4"
-			);
-
-			t1.staggerFrom(
-				".menubottom",
-				0.8,
-				{ y: 100, opacity: 0, ease: Expo.easeOut },
-				"0.4",
-				"-=0.6"
-			);
-
-			t1.reverse();
-			$(document).on("click", ".menu-open", function () {
-				t1.reversed(!t1.reversed());
-			});
-			$(document).on("click", ".menu-close", function () {
-				t1.reversed(!t1.reversed());
-			});
-		</script>
 	</body>
 </html>
